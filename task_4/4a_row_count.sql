@@ -1,9 +1,4 @@
-SELECT 
-	order_id, o.date AS date,
-    cust.name AS customer, cust.contact AS contact_person, cust.city AS city,
-    p.name AS product, cat.name AS category, p.price AS price, quantity,
-    e.last_name AS sales_manager, sh.name AS shipper, sh.phone AS shipper_phone, 
-    sup.name AS supplyer, sup.contact AS supplyer_person, sup.city AS supplyer_city, sup.phone AS supplyer_phone
+SELECT COUNT(order_id)
 FROM order_details AS od
 INNER JOIN orders AS o ON o.id = od.order_id
 INNER JOIN customers AS cust ON cust.id = o.customer_id
